@@ -240,10 +240,70 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* ---------- Projects ---------- */
 .project-feature {
-  padding: 2rem 0 3rem;
+  padding: 2.5rem 0 4rem;
   border-bottom: 1px solid var(--hair);
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
+.project-feature:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2rem;
+}
+.feature-cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 2.2rem;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.feature-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Specimen — typographic "cover" for AI-tooling project */
+.feature-cover.specimen {
+  aspect-ratio: auto;
+  background: var(--paper-2);
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.specimen-block { max-width: 38rem; width: 100%; }
+.specimen-label {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+.specimen-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 500;
+  margin: 0 0 1rem;
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 0.6rem;
+}
+.specimen-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+.specimen-foot {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
 .project-title {
   font-family: var(--serif);
   font-weight: 400;
@@ -264,7 +324,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 1.5rem;
-  row-gap: 0.5rem;
+  row-gap: 0.6rem;
   font-family: var(--sans);
   font-size: 0.85rem;
   margin: 0;
@@ -274,8 +334,45 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-soft);
+  align-self: start;
+  padding-top: 0.15rem;
 }
-.project-meta dd { margin: 0; }
+.project-meta dd { margin: 0; line-height: 1.55; }
+.project-meta dd a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Tier 2 — Earlier work ---------- */
+.tier-two {
+  border-top: 2px solid var(--ink);
+  padding-top: 3rem;
+  margin-top: 4rem;
+}
+.tier-kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+.tier-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.005em;
+}
+.tier-lede {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 0 2.5rem;
+  color: var(--ink-soft);
+}
 
 .project-grid {
   display: grid;
@@ -298,9 +395,25 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   color: var(--ink-soft);
   max-width: 50ch;
 }
+.project-card .card-meta {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
 .project-cover {
   aspect-ratio: 4 / 3;
   width: 100%;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ---------- Photography ---------- */
