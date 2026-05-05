@@ -433,6 +433,85 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .footer a { text-decoration: none; }
 .footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+/* ---------- "More" / page link ---------- */
+.more-link {
+  margin: 2.5rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.more-link a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.2rem;
+}
+.more-link a:hover { border-bottom-width: 2px; }
+
+/* ---------- Photography subpage ---------- */
+.page-photography main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+.photo-hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter) clamp(3rem, 7vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+@media (min-width: 900px) {
+  .photo-hero { grid-template-columns: 1.1fr 1fr; gap: 4rem; }
+}
+.photo-hero-image {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .photo-hero-image { aspect-ratio: 4 / 5.4; }
+}
+.photo-hero-text { padding-bottom: 1rem; }
+.photo-display {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  margin: 0.4rem 0 1.5rem;
+}
+
+.location {
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+}
+.loc-meta {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.55em;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+  display: inline-block;
+  margin-left: 0.4em;
+  vertical-align: middle;
+}
+
+.end-note {
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.end-line {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin: 1rem 0 2.5rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.end-line a { color: var(--ink); }
+.back-link {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.2rem;
+}
+
 /* ---------- Reveal on scroll (subtle) ---------- */
 .reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
