@@ -653,6 +653,35 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 /* ---------- Photography subpage ---------- */
 .page-photography main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
+/* Masonry-style grid using CSS columns — no crop, natural aspect ratios */
+.page-photography .photo-grid {
+  display: block;
+  columns: 1;
+  column-gap: 1.2rem;
+}
+@media (min-width: 640px) {
+  .page-photography .photo-grid { columns: 2; }
+}
+@media (min-width: 960px) {
+  .page-photography .photo-grid { columns: 3; column-gap: 1.4rem; }
+}
+.page-photography .photo {
+  break-inside: avoid;
+  margin: 0 0 1.4rem;
+  display: block;
+  background: none;
+  aspect-ratio: auto;
+  overflow: visible;
+  position: static;
+}
+.page-photography .photo img {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .photo-hero {
   max-width: var(--max);
   margin: 0 auto;
