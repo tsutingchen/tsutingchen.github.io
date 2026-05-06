@@ -262,6 +262,29 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   display: block;
 }
 
+/* No-crop variant: show full picture, no fixed aspect ratio */
+.feature-cover.no-crop {
+  aspect-ratio: auto;
+  background: var(--paper-2);
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: visible;
+}
+.feature-cover.no-crop img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Dual layout: two images side by side on wider screens */
+.feature-cover.dual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 760px) {
+  .feature-cover.dual { grid-template-columns: 1fr 1fr; align-items: center; }
+}
+
 /* Specimen — typographic "cover" for AI-tooling project */
 .feature-cover.specimen {
   aspect-ratio: auto;
