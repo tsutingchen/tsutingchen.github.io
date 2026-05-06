@@ -112,7 +112,29 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .hero {
   padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem);
   display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+  }
+}
+.hero-text {
+  display: grid;
   gap: 2rem;
+  align-content: end;
+}
+.hero-portrait {
+  margin: 0;
+  width: 100%;
+}
+.hero-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .display {
