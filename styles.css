@@ -695,11 +695,14 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   .photo-hero { grid-template-columns: 1.1fr 1fr; gap: 4rem; }
 }
 .photo-hero-image {
-  aspect-ratio: 4 / 5;
   width: 100%;
+  margin: 0;
+  background: var(--paper-2);
 }
-@media (min-width: 900px) {
-  .photo-hero-image { aspect-ratio: 4 / 5.4; }
+.photo-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .photo-hero-text { padding-bottom: 1rem; }
 .photo-display {
