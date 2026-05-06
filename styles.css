@@ -114,18 +114,21 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  align-items: end;
 }
 @media (min-width: 900px) {
   .hero {
     grid-template-columns: 1.4fr 1fr;
-    gap: 4rem;
+    column-gap: 4rem;
+    row-gap: 3rem;
+    align-items: end;
   }
+  .hero-title-block { grid-column: 1; grid-row: 1; align-self: end; }
+  .hero-portrait    { grid-column: 2; grid-row: 1; align-self: end; }
+  .hero-foot        { grid-column: 1 / -1; grid-row: 2; }
 }
-.hero-text {
+.hero-title-block {
   display: grid;
-  gap: 2rem;
-  align-content: end;
+  gap: 1.2rem;
 }
 .hero-portrait {
   margin: 0;
@@ -140,9 +143,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .display {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.6rem, 8.5vw, 7rem);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.1rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 .display em { font-style: italic; font-weight: 500; }
@@ -258,7 +261,39 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   color: var(--ink-soft);
   margin: 0 0 0.9rem;
 }
-.cv-what p { margin: 0; max-width: 65ch; line-height: 1.6; }
+.cv-what p { margin: 0 0 0.8rem; max-width: 65ch; line-height: 1.6; }
+.cv-what p:last-child { margin-bottom: 0; }
+
+/* CV link list with icons */
+.cv-links {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+}
+.cv-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 0.18rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.cv-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.cv-links .ic {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
 
 /* ---------- Projects ---------- */
 .project-feature {
