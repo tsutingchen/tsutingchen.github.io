@@ -653,6 +653,16 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 /* ---------- Photography subpage ---------- */
 .page-photography main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
+/* Discourage saving / dragging photos */
+.page-photography img {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
+}
+
 /* Masonry-style grid using CSS columns — no crop, natural aspect ratios */
 .page-photography .photo-grid {
   display: block;

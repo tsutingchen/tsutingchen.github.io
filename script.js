@@ -15,3 +15,12 @@ if ('IntersectionObserver' in window) {
 } else {
   targets.forEach(el => el.classList.add('is-visible'));
 }
+
+// Photography page: block right-click and drag on images
+if (document.body.classList.contains('page-photography')) {
+  const block = (e) => e.preventDefault();
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', block);
+    img.addEventListener('dragstart', block);
+  });
+}
